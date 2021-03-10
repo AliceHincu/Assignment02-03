@@ -1,7 +1,7 @@
 //
 // Created by Sakura on 3/9/2021.
 //
-#include "../domain/offer.h"
+#include "../dynamic_array/dynamic_array.h"
 
 #ifndef A23_913ALICEHINCU_OFFER_VALIDATOR_H
 #define A23_913ALICEHINCU_OFFER_VALIDATOR_H
@@ -17,5 +17,6 @@
  *                 rez % 7: the offer price is invalid
  */
 int validate_offer(Offer* offer);
+int good_validator(DynamicArray *da, Offer *offer);
 
 #endif //A23_913ALICEHINCU_OFFER_VALIDATOR_H

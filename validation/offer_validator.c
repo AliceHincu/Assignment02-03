@@ -8,6 +8,18 @@
 #include <string.h>
 #include <stdio.h>
 
+int good_validator(DynamicArray *da, Offer *offer){
+    TElement *of = get_all(da);
+    for(int i=0;i<get_length(da);i++) {
+        Offer *t = of[i];
+        if (strcmp(get_destination_offer(t), get_destination_offer(offer)) == 0 &&
+            strcmp(get_departure_date_offer(t), get_departure_date_offer(offer)) == 0)
+            return 0;
+    }
+    return 1;
+}
+
+
 int validate_offer(Offer *offer){
     int rez = 1;
 

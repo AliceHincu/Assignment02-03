@@ -125,6 +125,26 @@ void update_offer_ui(DynamicArray *da){
 }
 
 
+void display_destination_string_ui(DynamicArray * da){
+    printf("Input string: ");
+    char *input;
+    input = read_string(stdin, 10);
+
+    DynamicArray * da_dest = createDynamicArray(10);
+
+    if(strcmp(input, "")==0) {
+        da_dest = da;
+    }
+    else {
+        da_dest = get_destination_string_service(da, da_dest, input);
+    }
+
+
+    DynamicArray * sorted_da = createDynamicArray(10);
+    sorted_da = sort_by_price(da_dest);
+    list_offers(sorted_da);
+
+}
 void choose_option(DynamicArray* da){
     char *choose;
     bool done = false;
@@ -147,7 +167,7 @@ void choose_option(DynamicArray* da){
             update_offer_ui(da);
         }
         else if (strcmp(choose, "4") == 0){
-            break;
+            display_destination_string_ui(da);
         }
         else if (strcmp(choose, "5") == 0){
             break;

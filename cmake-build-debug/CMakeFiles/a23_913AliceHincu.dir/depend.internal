@@ -25,8 +25,10 @@ CMakeFiles/a23_913AliceHincu.dir/service/offer_service.c.obj
  C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/repo/repo_offer.h
  C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/service/offer_service.c
  C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/service/offer_service.h
+ C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/validation/offer_validator.h
 CMakeFiles/a23_913AliceHincu.dir/tests/tests.c.obj
  C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/domain/offer.h
+ C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.h
  C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/tests/tests.c
  C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/tests/tests.h
  C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/validation/offer_validator.h
@@ -38,5 +40,6 @@ CMakeFiles/a23_913AliceHincu.dir/ui/ui.c.obj
  C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/ui/ui.h
 CMakeFiles/a23_913AliceHincu.dir/validation/offer_validator.c.obj
  C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/domain/offer.h
+ C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.h
  C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/validation/offer_validator.c
  C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/validation/offer_validator.h

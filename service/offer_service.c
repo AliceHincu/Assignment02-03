@@ -3,13 +3,20 @@
 //
 
 #include "offer_service.h"
+#include "../validation/offer_validator.h"
 #include "../repo/repo_offer.h"
 #include <stdio.h>
+#include <string.h>
 
 void create_offer_service(DynamicArray *da, char* type, char* destination, char* departure_date, int price){
     Offer* of = create_offer(type, destination, departure_date, price);
-    add_offer_repo(da,of);
-    add(da, of);
+    // validation 1
+    if(good_validator(da, of)==1) {
+        add_offer_repo(da, of);
+        add(da, of);
+    }
+    else
+        printf("The destination and date already exist!");
 }
 
 void delete_offer_service(DynamicArray *da, int nr){
@@ -25,4 +32,32 @@ void update_offer_service(DynamicArray *da, int position, char* type, char* dest
 
 TElement * get_offers_service(DynamicArray *da){
     return get_offers(da);
+}
+
+DynamicArray* get_destination_string_service(DynamicArray *da, DynamicArray * da_dest, char* input){
+    TElement *of = get_offers_service(da);
+    for(int i=0;i<get_length(da);i++) {
+        Offer *t = of[i];
+        if (strcmp(get_destination_offer(t), input) == 0) add(da_dest, copy_offer(of[i]));
+    }
+
+    return da_dest;
+
+}
+
+DynamicArray * sort_by_price(DynamicArray *da){
+    TElement *of = get_offers_service(da);
+    for(int i=0;i<get_length(da)-1;i++) {
+        for(int j=i+1;j<get_length(da);j++) {
+            if (get_price_offer(of[i])>get_price_offer(of[j]))
+            {
+                Offer *aux = copy_offer(of[i]);
+                of[i] = of[j];
+                of[j] = aux;
+            }
+        }
+    }
+
+    return da;
+
 }
