@@ -6,41 +6,15 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/domain/offer.c
+offer.h
 C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/domain/offer.h
-
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.c
-dynamic_array.h
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.h
 stdlib.h
--
-assert.h
--
-
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.h
-../domain/offer.h.
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/domain/offer.h
-
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/service/offer_service.h
-../dynamic_array/dynamic_array.h
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.h
-
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/ui/ui.c
-ui.h
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/ui/ui.h
-stdio.h
--
-stdlib.h
--
-stdbool.h
 -
 string.h
 -
-stdlib.h
+stdio.h
 -
-../service/offer_service.h
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/service/offer_service.h
 
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/ui/ui.h
-../dynamic_array/dynamic_array.h
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.h
+C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/domain/offer.h
 

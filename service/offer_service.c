@@ -12,6 +12,17 @@ void create_offer_service(DynamicArray *da, char* type, char* destination, char*
     add(da, of);
 }
 
+void delete_offer_service(DynamicArray *da, int nr){
+    //validation
+    delete_offer_repo(da, nr);
+}
+
+
+void update_offer_service(DynamicArray *da, int position, char* type, char* destination, char * departure_date, int price){
+    //validation
+    update_offer_repo(da, position, type, destination, departure_date, price);
+}
+
 TElement * get_offers_service(DynamicArray *da){
     return get_offers(da);
 }

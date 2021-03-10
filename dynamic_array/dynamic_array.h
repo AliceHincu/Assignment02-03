@@ -36,6 +36,7 @@ void destroy(DynamicArray* arr);
 /// <param name="arr">The dynamic array.</param>
 /// <param name="p">The planet to be added.</param>
 void add(DynamicArray* arr, TElement t);
+void delete_from_position(DynamicArray *arr, int position);
 
 TElement *get_all(DynamicArray* arr);
 int get_length(DynamicArray * arr);

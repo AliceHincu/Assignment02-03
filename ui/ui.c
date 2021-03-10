@@ -58,23 +58,28 @@ void add_offer_ui(DynamicArray *da){
     printf("!!!Validation not complete, please enter correct input!!!\nType: ");
     char *type;
     type = read_string(stdin, 10);
-    printf("%s\n", type);
 
     printf("Destination: ");
     char *destination;
     destination = read_string(stdin, 10);
-    printf("%s\n", destination);
 
     printf("Departure_date: ");
     char *departure_date;
     departure_date = read_string(stdin, 10);
-    printf("%s\n", departure_date);
 
     printf("Price: ");
     char *price;
     price = read_string(stdin, 10);
     int pr = atoi(price);
     create_offer_service(da, type, destination, departure_date, pr);
+}
+
+void delete_offer_ui(DynamicArray*da){
+    printf("!!!Validation not complete, please enter correct input!!!\nWhich offer do you want to delete: ");
+    char *nr;
+    nr = read_string(stdin, 10);
+    int num = atoi(nr);
+    delete_offer_service(da, num-1);
 }
 
 
@@ -89,6 +94,34 @@ void list_offers(DynamicArray *da){
         printf("\n\tPrice: %d", get_price_offer(t));
     }
     printf("\n");
+}
+
+
+void update_offer_ui(DynamicArray *da){
+    printf("!!!Validation not complete, please enter correct input!!!\nWhich offer do you want to update: ");
+    char *nr;
+    nr = read_string(stdin, 10);
+    int num = atoi(nr);
+
+    printf("New type: ");
+    char *type;
+    type = read_string(stdin, 10);
+
+    printf("New destination: ");
+    char *destination;
+    destination = read_string(stdin, 10);
+
+    printf("New departure_date: ");
+    char *departure_date;
+    departure_date = read_string(stdin, 10);
+
+    printf("New price: ");
+    char *price;
+    price = read_string(stdin, 10);
+    int pr = atoi(price);
+
+    update_offer_service(da,num-1, type, destination, departure_date, pr);
+
 }
 
 
@@ -108,10 +141,10 @@ void choose_option(DynamicArray* da){
             add_offer_ui(da);
         }
         else if (strcmp(choose, "2") == 0){
-            break;
+            delete_offer_ui(da);
         }
         else if (strcmp(choose, "3") == 0){
-            break;
+            update_offer_ui(da);
         }
         else if (strcmp(choose, "4") == 0){
             break;

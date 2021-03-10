@@ -39,12 +39,12 @@ void destroy(DynamicArray* arr)
 }
 
 // Resizes the array, allocating more space.
-void resize(DynamicArray* arr)
+void resize(DynamicArray* arr, int new_capacity)
 {
     if (arr == NULL)
         return;
 
-    arr -> capacity = (arr -> capacity)*2;
+    arr -> capacity = new_capacity;
     TElement * aux_arr = (TElement *)realloc(arr->elems, arr->capacity*sizeof(TElement));
     if(aux_arr==NULL)
         return;
@@ -61,9 +61,22 @@ void add(DynamicArray* arr, TElement t)
 
     // resize the array, if necessary
     if (arr->length == arr->capacity)
-        resize(arr);
+        resize(arr, 2*(arr->capacity));
     arr->elems[arr->length] = t;
     arr->length++;
+}
+
+void delete_from_position(DynamicArray *arr, int position){
+    if (position >= arr->length)
+        return;
+    if (arr->length == arr->capacity/4){
+        resize(arr, arr->capacity/2);
+    }
+    destroy_offer(arr->elems[position]);
+    for(int i = position; i< arr->length-1;++i){
+        arr -> elems[i] = arr -> elems[i+1];
+    }
+    arr -> length--;
 }
 
 TElement *get_all(DynamicArray* arr){
