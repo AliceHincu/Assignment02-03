@@ -6,15 +6,15 @@
 #include <stdio.h>
 
 void add_offer_repo(DynamicArray *da, Offer* of){
-    char *type = get_type_offer(of);
+    addElementToDynamicArray(da, of);
 }
 
 void delete_offer_repo(DynamicArray *da, int nr){
-    delete_from_position(da, nr);
+    deleteElementFromPosition(da, nr);
 }
 
-void update_offer_repo(DynamicArray *da, int position, char* type, char* destination, char * departure_date, int price){
-    Offer* t = da->elems[position];
+void update_offer_repo(DynamicArray *da, int position, char* type, char* destination, char * departure_date, double price){
+    Offer* t = da->elements[position];
     change_type(t, type);
     change_destination(t, destination);
     change_date(t,departure_date);

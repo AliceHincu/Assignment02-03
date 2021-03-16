@@ -11,12 +11,13 @@
  * output data: rez - integer value depicting the result of the validation
  *              if rez == 1: the offer is valid
  *              else if
+ *                 rez % 2 : the offer already exists
  *                 rez % 3 : the offer type is invalid
  *                 rez % 5 : the offer destination is invalid
  *                 rez % 5 : the offer departure date is invalid
  *                 rez % 7: the offer price is invalid
  */
-int validate_offer(Offer* offer);
-int good_validator(DynamicArray *da, Offer *offer);
+int validate_offer(DynamicArray *da, Offer* offer);
+int validate_price(char* price);
 
 #endif //A23_913ALICEHINCU_OFFER_VALIDATOR_H

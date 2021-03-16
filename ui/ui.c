@@ -3,11 +3,11 @@
 //
 
 #include "ui.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
-#include <stdlib.h>
 #include "../service/offer_service.h"
 
 char *read_string(FILE* fp, size_t size){
@@ -15,11 +15,11 @@ char *read_string(FILE* fp, size_t size){
 //star before name of function because we return a pointer
 //file *fp - So the pointer doesn't change (still points to the handler structure of the file) but the data pointed by the structure does.
     char *str;
-    char ch;
     size_t len = 0;
 
     // This function returns a pointer to the newly allocated memory, or NULL if the request fails.
     str = realloc(NULL, sizeof(*str)*size);//size is start size
+
     if(!str) return str; // in case something it's wrong and str is null
 
     /*
@@ -28,15 +28,20 @@ char *read_string(FILE* fp, size_t size){
      indicator for the stream. This function returns the character read as an unsigned char cast to an int or EOF on end of file or error.
      - EOF - returns EOF when end of file is reached
     */
-    while(EOF!=(ch=fgetc(fp)) && ch != '\n'){
+    //printf("here now \n");
+    int ch;
+    ch=fgetc(fp);
+    //printf("here \n");
+    while(EOF!= ch && ch != '\n'){
         str[len++] = ch;
+
         if(len==size){
             str = realloc(str, sizeof(*str)*(size+=16));
             if(!str) return str;
         }
+        ch=fgetc(fp);
     }
     str[len++]='\0';
-
     return realloc(str, sizeof(*str)*len);
 }
 
@@ -50,7 +55,8 @@ void print_menu(){
            "are considered), and show them sorted ascending by price.\n\t"
            "5. Display all offers of a given type, having their departure after a given date.\n\t"
            "6. Provide multiple undo and redo functionality. Each step will undo/redo the previous operation performed by the user.\n"
-           "*7. List offers.\n");
+           "*7. List offers.\n"
+           "*8. For a given destination, display all offers, sorted ascending by departure month.");
 }
 
 
@@ -70,28 +76,33 @@ void add_offer_ui(DynamicArray *da){
     printf("Price: ");
     char *price;
     price = read_string(stdin, 10);
-    int pr = atoi(price);
-    create_offer_service(da, type, destination, departure_date, pr);
+
+    create_offer_service(da, type, destination, departure_date, price);
+
+    free(type);
+    free(destination);
+    free(departure_date);
+    free(price);
 }
 
 void delete_offer_ui(DynamicArray*da){
     printf("!!!Validation not complete, please enter correct input!!!\nWhich offer do you want to delete: ");
-    char *nr;
-    nr = read_string(stdin, 10);
+    char *nr = read_string(stdin, 10);
     int num = atoi(nr);
     delete_offer_service(da, num-1);
+    free(nr);
 }
 
 
 void list_offers(DynamicArray *da){
-    TElement *of = get_offers_service(da);
+    TElement *offers = get_offers_service(da);
     for(int i=0;i<get_length(da);i++){
-        Offer* t = of[i];
+        Offer* offer = offers[i];
         printf("\n-- Offer number %d --", i+1);
-        printf("\n\tType: %s", get_type_offer(t));
-        printf("\n\tDestination: %s", get_destination_offer(t));
-        printf("\n\tDeparture date: %s", get_departure_date_offer(t));
-        printf("\n\tPrice: %d", get_price_offer(t));
+        printf("\n\tType: %s", get_type_offer(offer));
+        printf("\n\tDestination: %s", get_destination_offer(offer));
+        printf("\n\tDeparture date: %s", get_departure_date_offer(offer));
+        printf("\n\tPrice: %lf", get_price_offer(offer));
     }
     printf("\n");
 }
@@ -121,7 +132,11 @@ void update_offer_ui(DynamicArray *da){
     int pr = atoi(price);
 
     update_offer_service(da,num-1, type, destination, departure_date, pr);
-
+    free(nr);
+    free(type);
+    free(destination);
+    free(departure_date);
+    free(price);
 }
 
 
@@ -131,21 +146,42 @@ void display_destination_string_ui(DynamicArray * da){
     input = read_string(stdin, 10);
 
     DynamicArray * da_dest = createDynamicArray(10);
+    DynamicArray * sorted_da;
 
-    if(strcmp(input, "")==0) {
+    if(strcmp(input, "")==0)
         da_dest = da;
-    }
-    else {
+    else
         da_dest = get_destination_string_service(da, da_dest, input);
-    }
 
-
-    DynamicArray * sorted_da = createDynamicArray(10);
-    sorted_da = sort_by_price(da_dest);
+    sorted_da=sort_by_price(da_dest);
     list_offers(sorted_da);
 
+    destroyDynamicArray(da_dest);
+    free(input);
 }
-void choose_option(DynamicArray* da){
+
+void display_destination_month_ui(DynamicArray * da){
+    printf("Input destination: ");
+    char *input;
+    input = read_string(stdin, 10);
+
+    DynamicArray * da_dest = createDynamicArray(10);
+
+    if(strcmp(input, "")==0)
+        da_dest = da;
+    else
+        da_dest = get_destination_string_service(da, da_dest, input);
+
+    DynamicArray * sorted_da;
+    sorted_da = sort_by_month(da_dest);
+    list_offers(sorted_da);
+
+    destroyDynamicArray(da_dest);
+    free(input);
+
+}
+
+void choose_option_ui(DynamicArray* da){
     char *choose;
     bool done = false;
     print_menu();
@@ -156,6 +192,7 @@ void choose_option(DynamicArray* da){
 
         if (strcmp(choose, "0") == 0){
             done = true;
+            destroyDynamicArray(da);
         }
         else if (strcmp(choose, "1") == 0){
             add_offer_ui(da);
@@ -178,9 +215,13 @@ void choose_option(DynamicArray* da){
         else if (strcmp(choose, "7") == 0){
             list_offers(da);
         }
-        else printf("Wrong command! Please try again!");
+        else if (strcmp(choose, "8") == 0){
+            display_destination_month_ui(da);
+        }
 
+        else printf("Wrong command! Please try again!");
         free(choose);
+
 
     }
 

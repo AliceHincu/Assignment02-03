@@ -5,42 +5,46 @@
 #ifndef A23_913ALICEHINCU_DYNAMIC_ARRAY_H
 #define A23_913ALICEHINCU_DYNAMIC_ARRAY_H
 #pragma once
-#include "../domain/offer.h."
+#include "../domain/offer.h"
 
+
+/// ------ Define types -------
 typedef Offer* TElement;
-
 typedef struct
 {
-    TElement* elems;
+    TElement* elements; // the elements of the array
     int length;			// actual length of the array
-    int capacity;
+    int capacity;       // capacity
 } DynamicArray;
 
-/// <summary>
+
+/// ------ Functions -------
 /// Creates a dynamic array of generic elements, with a given capacity.
-/// </summary>
-/// <param name="capacity">Integer, maximum capacity for the dynamic array.</param>
-/// <returns>A pointer the the created dynamic array.</returns>
+/// Returns a pointer the the created dynamic array.
 DynamicArray* createDynamicArray(int capacity);
 
-/// <summary>
+
 /// Destroys the dynamic array.
-/// </summary>
-/// <param name="arr">The dynamic array to be destoyed.</param>
-/// <returns>A pointer the the created dynamic array.</returns>
-void destroy(DynamicArray* arr);
+void destroyDynamicArray(DynamicArray* arr);
 
-/// <summary>
+
 /// Adds a generic element to the dynamic array.
-/// </summary>
-/// <param name="arr">The dynamic array.</param>
-/// <param name="p">The planet to be added.</param>
-void add(DynamicArray* arr, TElement t);
-void delete_from_position(DynamicArray *arr, int position);
+void addElementToDynamicArray(DynamicArray* arr, TElement t);
 
+
+/// Delete an element from a position from the dynamic array
+void deleteElementFromPosition(DynamicArray *arr, int position);
+
+
+/// Resize the dynamic array
+void resizeDynamicArray(DynamicArray* arr, int new_capacity);
+
+
+/// Returns the elements of the dynamic array
 TElement *get_all(DynamicArray* arr);
 int get_length(DynamicArray * arr);
 
 // Tests
 void testsDynamicArray();
+
 #endif //A23_913ALICEHINCU_DYNAMIC_ARRAY_H

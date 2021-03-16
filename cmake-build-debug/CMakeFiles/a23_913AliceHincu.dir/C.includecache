@@ -6,53 +6,25 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/domain/offer.h
+/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/domain/offer.h
 
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.h
-../domain/offer.h.
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/domain/offer.h
+/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.h
+../domain/offer.h
+/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/domain/offer.h
 
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/repo/repo_offer.h
-../dynamic_array/dynamic_array.h
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.h
-
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/service/offer_service.c
-offer_service.h
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/service/offer_service.h
-../validation/offer_validator.h
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/validation/offer_validator.h
-../repo/repo_offer.h
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/repo/repo_offer.h
-stdio.h
+/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/validation/offer_validator.c
+offer_validator.h
+/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/validation/offer_validator.h
+stdlib.h
 -
 string.h
 -
-
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/service/offer_service.h
-../dynamic_array/dynamic_array.h
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.h
-
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/ui/ui.c
-ui.h
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/ui/ui.h
 stdio.h
 -
-stdlib.h
+ctype.h
 -
-stdbool.h
--
-string.h
--
-stdlib.h
--
-../service/offer_service.h
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/service/offer_service.h
 
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/ui/ui.h
+/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/validation/offer_validator.h
 ../dynamic_array/dynamic_array.h
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.h
-
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/validation/offer_validator.h
-../dynamic_array/dynamic_array.h
-C:/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.h
+/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.h
 

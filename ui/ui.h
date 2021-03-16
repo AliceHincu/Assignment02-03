@@ -5,4 +5,4 @@
 //#include "../domain/offer.h"
 #include "../dynamic_array/dynamic_array.h"
 
-void choose_option(DynamicArray*);
+void choose_option_ui(DynamicArray*);

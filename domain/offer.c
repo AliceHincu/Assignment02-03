@@ -7,7 +7,7 @@
 #include <string.h>
 #include <stdio.h>
 
-Offer* create_offer(char* type, char* destination, char* departure_date, int price){
+Offer* create_offer(char* type, char* destination, char* departure_date, double price){
     Offer* offer = (Offer*)malloc(sizeof(Offer));
     offer -> price = price;
 
@@ -22,6 +22,8 @@ Offer* create_offer(char* type, char* destination, char* departure_date, int pri
     offer->departure_date = malloc(sizeof(char)*(strlen(departure_date)+1));
     strcpy(offer->departure_date, departure_date);
 
+    offer->detailed_date = get_detailed_date(departure_date);
+
     return offer;
 }
 
@@ -32,31 +34,57 @@ Offer* copy_offer(Offer* offer){
 
 
 char* get_type_offer(Offer* offer){
-    char* type = (char*)malloc(strlen(offer->type)+1);
-    strcpy(type, offer->type);
-    type[strlen(offer->type)] = '\0'; // nul terminate the array, so it can be a string
-    return type;
+    if (offer == NULL)
+        return NULL;
+    return offer -> type;
 }
 
 
 char* get_destination_offer(Offer* offer){
-    char* dest = (char*)malloc(strlen(offer->destination)+1);
-    strcpy(dest, offer->destination);
-    dest[strlen(offer->destination)] = '\0'; // nul terminate the array, so it can be a string
-    return dest;
+    if (offer == NULL)
+        return NULL;
+    return offer -> destination;
 }
 
 
 char* get_departure_date_offer(Offer* offer){
-    char* dep = (char*)malloc(strlen(offer->departure_date)+1);
-    strcpy(dep, offer->departure_date);
-    dep[strlen(offer->departure_date)] = '\0'; // nul terminate the array, so it can be a string
-    return dep;
+    if (offer == NULL)
+        return NULL;
+    return offer -> departure_date;
 }
 
 
-int get_price_offer(Offer* offer){
-    return offer->price;
+Date get_detailed_date(char* departure_date){
+    // pointer to current split section
+    char *pch;
+    Date final_date;
+    // info needed
+    int day = -1, month = -1, year = -1;
+    // split the date from beginning to the first occurrence of -
+    pch = strtok(departure_date,"-");
+    // while we have more / chars
+    while (pch != NULL){
+        // set the variables
+        char* num = pch;
+        int nr = atoi(pch);
+        if(day == -1) day = nr;
+        else if(month == -1) month = nr;
+        else if(year == -1) year = nr;
+
+        // continue splitting the string
+        pch = strtok (NULL, "-");
+    }
+    final_date.day = day;
+    final_date.month = month;
+    final_date.year = year;
+    return final_date;
+}
+
+
+double get_price_offer(Offer* offer){
+    if (offer == NULL)
+        return 0;
+    return offer -> price;
 }
 
 
@@ -89,11 +117,12 @@ void change_date(Offer *offer, char* new_date){
 
 void change_price(Offer *offer, int new_price){
     offer->price = new_price;
-
 }
 
 
 void destroy_offer(Offer* offer){
+    free(offer->departure_date);
     free(offer->type);
+    free(offer->destination);
     free(offer);
 }

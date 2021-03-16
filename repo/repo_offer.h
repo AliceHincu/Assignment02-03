@@ -8,7 +8,7 @@
 
 void add_offer_repo(DynamicArray *da, Offer* of);
 void delete_offer_repo(DynamicArray *da, int nr);
-void update_offer_repo(DynamicArray *da, int position, char* type, char* destination, char * departure_date, int price);
+void update_offer_repo(DynamicArray *da, int position, char* type, char* destination, char * departure_date, double price);
 
 TElement *get_offers(DynamicArray *da);
 
