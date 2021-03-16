@@ -8,6 +8,7 @@
 #include <stdio.h>
 
 Offer* create_offer(char* type, char* destination, char* departure_date, double price){
+
     Offer* offer = (Offer*)malloc(sizeof(Offer));
     offer -> price = price;
 
@@ -21,6 +22,7 @@ Offer* create_offer(char* type, char* destination, char* departure_date, double 
 
     offer->departure_date = malloc(sizeof(char)*(strlen(departure_date)+1));
     strcpy(offer->departure_date, departure_date);
+
 
     offer->detailed_date = get_detailed_date(departure_date);
 
@@ -62,6 +64,7 @@ Date get_detailed_date(char* departure_date){
     int day = -1, month = -1, year = -1;
     // split the date from beginning to the first occurrence of -
     pch = strtok(departure_date,"-");
+
     // while we have more / chars
     while (pch != NULL){
         // set the variables
@@ -112,6 +115,7 @@ void change_date(Offer *offer, char* new_date){
     strcpy(offer->departure_date, new_date);
     offer->departure_date[strlen(new_date)] = '\0'; // nul terminate the array, so it can be a string
 
+    offer->detailed_date = get_detailed_date(new_date);
 }
 
 

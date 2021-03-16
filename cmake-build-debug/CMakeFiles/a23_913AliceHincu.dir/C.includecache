@@ -12,17 +12,21 @@
 ../domain/offer.h
 /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/domain/offer.h
 
-/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/validation/offer_validator.c
-offer_validator.h
+/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/tests/tests.c
+tests.h
+/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/tests/tests.h
+../validation/offer_validator.h
 /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/validation/offer_validator.h
-stdlib.h
--
-string.h
+assert.h
 -
 stdio.h
 -
-ctype.h
+string.h
 -
+stdlib.h
+-
+
+/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/tests/tests.h
 
 /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/validation/offer_validator.h
 ../dynamic_array/dynamic_array.h

@@ -4,10 +4,9 @@
 
 #include "offer_validator.h"
 
-#include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 #include <ctype.h>
+#include <stdio.h>
 
 int validate_price(char* price){
     for (int index = 0; index < strlen(price); index++){
@@ -66,8 +65,7 @@ int validate_date(Offer *offer){
     if (strlen(offer->departure_date)!=10)
         return 7;
 
-    int done = 1;
-    for(int index=0; index<10 && done; index++){
+    for(int index=0; index<10; index++){
         char letter = offer->departure_date[index];
         if(index==2||index==5) {
             if (letter != '-')
@@ -84,11 +82,11 @@ int validate_date(Offer *offer){
 
     //Now we will check date according to month
     if( month == 2 ) {
-        if((year % 4 == 0) && (year % 100 != 0) && (year % 400 == 0)) {
+        if((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) {//leap year
             if(day > 29)
                 return 7;
         }
-        if(day >= 30)
+        else if(day >= 29)
             return 7;
     }
     //April, June, September and November are with 30 days
@@ -103,6 +101,7 @@ int validate_date(Offer *offer){
 int validate_offer(DynamicArray *da, Offer *offer){
     int rez = 1;
 
+    // validate uniqueness
     rez *= validate_uniqueness(da, offer);
 
     // validate type - must be seaside, mountain or city break
@@ -112,7 +111,6 @@ int validate_offer(DynamicArray *da, Offer *offer){
     rez *= validate_destination(offer);
 
     // validate departure
-
     rez *= validate_date(offer);
 
     return rez;

@@ -19,5 +19,9 @@
  */
 int validate_offer(DynamicArray *da, Offer* offer);
 int validate_price(char* price);
+int validate_uniqueness(DynamicArray *da, Offer *offer);
+int validate_type(Offer *offer);
+int validate_destination(Offer *offer);
+int validate_date(Offer *offer);
 
 #endif //A23_913ALICEHINCU_OFFER_VALIDATOR_H
