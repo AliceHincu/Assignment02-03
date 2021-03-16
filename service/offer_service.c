@@ -31,21 +31,38 @@ void create_offer_service(DynamicArray *da, char* type, char* destination, char*
 }
 
 
-void delete_offer_service(DynamicArray *da, int nr){
-    //validation
+void delete_offer_service(DynamicArray *da, long int nr){
     delete_offer_repo(da, nr);
 }
 
 
-void update_offer_service(DynamicArray *da, int position, char* type, char* destination, char * departure_date, double price){
-    //validation
-    update_offer_repo(da, position, type, destination, departure_date, price);
+void update_offer_service(DynamicArray *da, long int position, char* type, char* destination, char * departure_date, char* price){
+    double pr = strtod(price, NULL);
+    Offer *of = create_offer(type, destination, departure_date, pr);
+
+    int validation = validate_offer(da, of);
+    if (validation == 1 && validate_price(price))
+        update_offer_repo(da, position, type, destination, departure_date, pr);
+
+    else {
+        printf("\n Errors:");
+        if (validation%2==0) printf("\n\tThe offer already exists!(An offer with the same date and destination already exists!");
+        if (validation%3==0) printf("\n\tThe type is not valid!");
+        if (validation%5==0) printf("\n\tThe destination is not valid!");
+        if (validation%7==0) printf("\n\tThe departure date is not valid!");
+        if (validation%11==0) printf("\n\tThe price is not valid!");
+        if (validate_price(price)==0) printf("\n\tThe price is not valid!");
+        printf("\n");
+    }
+    destroy_offer(of);
 }
 
 TElement * get_offers_service(DynamicArray *da){
     return get_offers(da);
 }
 
+
+/// Returns a dynamic array with the offers which have the same destination as the input string
 DynamicArray* get_destination_string_service(DynamicArray *da, DynamicArray * da_dest, char* input){
     TElement *of = get_offers_service(da);
     for(int i=0;i<get_length(da);i++) {
@@ -56,6 +73,20 @@ DynamicArray* get_destination_string_service(DynamicArray *da, DynamicArray * da
     return da_dest;
 
 }
+
+
+/// Returns a dynamic array with the offers which have the same type as the input string
+DynamicArray* get_type_string_service(DynamicArray *da, DynamicArray * da_dest, char* input){
+    TElement *of = get_offers_service(da);
+    for(int i=0;i<get_length(da);i++) {
+        Offer *t = of[i];
+        if (strcmp(get_type_offer(t), input) == 0) addElementToDynamicArray(da_dest, copy_offer(of[i]));
+    }
+
+    return da_dest;
+
+}
+
 
 DynamicArray * sort_by_price(DynamicArray *da){
     TElement *of = get_offers_service(da);
@@ -69,9 +100,7 @@ DynamicArray * sort_by_price(DynamicArray *da){
             }
         }
     }
-
     return da;
-
 }
 
 

@@ -9,11 +9,11 @@ void add_offer_repo(DynamicArray *da, Offer* of){
     addElementToDynamicArray(da, of);
 }
 
-void delete_offer_repo(DynamicArray *da, int nr){
+void delete_offer_repo(DynamicArray *da, long int nr){
     deleteElementFromPosition(da, nr);
 }
 
-void update_offer_repo(DynamicArray *da, int position, char* type, char* destination, char * departure_date, double price){
+void update_offer_repo(DynamicArray *da, long int position, char* type, char* destination, char * departure_date, double price){
     Offer* t = da->elements[position];
     change_type(t, type);
     change_destination(t, destination);

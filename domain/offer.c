@@ -119,7 +119,7 @@ void change_date(Offer *offer, char* new_date){
 }
 
 
-void change_price(Offer *offer, int new_price){
+void change_price(Offer *offer, double new_price){
     offer->price = new_price;
 }
 

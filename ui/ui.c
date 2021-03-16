@@ -56,24 +56,28 @@ void print_menu(){
            "5. Display all offers of a given type, having their departure after a given date.\n\t"
            "6. Provide multiple undo and redo functionality. Each step will undo/redo the previous operation performed by the user.\n"
            "*7. List offers.\n"
-           "*8. For a given destination, display all offers, sorted ascending by departure month.");
+           "*8. For a given destination, display all offers, sorted ascending by departure month.\n"
+           "**9. Display all tourism offers whose types contain a given string (if the string is empty, all types"
+           "are considered), and show them sorted ascending by departure month.");
 }
 
 
 void add_offer_ui(DynamicArray *da){
-    printf("!!!Validation not complete, please enter correct input!!!\nType: ");
+    printf("\n~Conditions~\n  -type has to be mountain, seaside or city break\n  -the date must respect the format"
+           " dd-mm-yyyy\n  -the year must be between 1000 and 9999");
+    printf("\n~Add an offer~\n  Type: ");
     char *type;
     type = read_string(stdin, 10);
 
-    printf("Destination: ");
+    printf("  Destination: ");
     char *destination;
     destination = read_string(stdin, 10);
 
-    printf("Departure_date: ");
+    printf("  Departure_date: ");
     char *departure_date;
     departure_date = read_string(stdin, 10);
 
-    printf("Price: ");
+    printf("  Price: ");
     char *price;
     price = read_string(stdin, 10);
 
@@ -86,33 +90,24 @@ void add_offer_ui(DynamicArray *da){
 }
 
 void delete_offer_ui(DynamicArray*da){
-    printf("!!!Validation not complete, please enter correct input!!!\nWhich offer do you want to delete: ");
+    printf("\n~Delete offer~\n  Which offer do you want to delete: ");
     char *nr = read_string(stdin, 10);
-    int num = atoi(nr);
-    delete_offer_service(da, num-1);
+    long int num = strtol(nr, NULL, 10);
+
+    //validation
+    if (num < 1 || num > da->length)
+        printf("This offer does not exist. The interval is between 1 and %d\n", da->length);
+    else
+        delete_offer_service(da, num-1);
     free(nr);
 }
 
 
-void list_offers(DynamicArray *da){
-    TElement *offers = get_offers_service(da);
-    for(int i=0;i<get_length(da);i++){
-        Offer* offer = offers[i];
-        printf("\n-- Offer number %d --", i+1);
-        printf("\n\tType: %s", get_type_offer(offer));
-        printf("\n\tDestination: %s", get_destination_offer(offer));
-        printf("\n\tDeparture date: %s", get_departure_date_offer(offer));
-        printf("\n\tPrice: %lf", get_price_offer(offer));
-    }
-    printf("\n");
-}
-
-
 void update_offer_ui(DynamicArray *da){
-    printf("!!!Validation not complete, please enter correct input!!!\nWhich offer do you want to update: ");
+    printf("\n~Update an offer~\n  Which offer do you want to update: ");
     char *nr;
     nr = read_string(stdin, 10);
-    int num = atoi(nr);
+    long int num = strtol(nr,NULL,10);
 
     printf("New type: ");
     char *type;
@@ -129,15 +124,34 @@ void update_offer_ui(DynamicArray *da){
     printf("New price: ");
     char *price;
     price = read_string(stdin, 10);
-    int pr = atoi(price);
 
-    update_offer_service(da,num-1, type, destination, departure_date, pr);
+    if (num < 1 || num > da->length)
+        printf("This offer does not exist. The interval is between 1 and %d\n", da->length);
+    else
+        update_offer_service(da,num-1, type, destination, departure_date, price);
+
     free(nr);
     free(type);
     free(destination);
     free(departure_date);
     free(price);
 }
+
+
+void list_offers(DynamicArray *da){
+    printf("\n~Offers~\n\n");
+    TElement *offers = get_offers_service(da);
+    for(int i=0;i<get_length(da);i++){
+        Offer* offer = offers[i];
+        printf("\n-- Offer number %d --", i+1);
+        printf("\n\tType: %s", get_type_offer(offer));
+        printf("\n\tDestination: %s", get_destination_offer(offer));
+        printf("\n\tDeparture date: %s", get_departure_date_offer(offer));
+        printf("\n\tPrice: %lf", get_price_offer(offer));
+    }
+    printf("\n");
+}
+
 
 
 void display_destination_string_ui(DynamicArray * da){
@@ -159,6 +173,28 @@ void display_destination_string_ui(DynamicArray * da){
     destroyDynamicArray(da_dest);
     free(input);
 }
+
+
+void display_type_string_ui(DynamicArray * da){
+    printf("Input string: ");
+    char *input;
+    input = read_string(stdin, 10);
+
+    DynamicArray * da_dest = createDynamicArray(10);
+    DynamicArray * sorted_da;
+
+    if(strcmp(input, "")==0)
+        da_dest = da;
+    else
+        da_dest = get_type_string_service(da, da_dest, input);
+
+    sorted_da=sort_by_month(da_dest);
+    list_offers(sorted_da);
+
+    destroyDynamicArray(da_dest);
+    free(input);
+}
+
 
 void display_destination_month_ui(DynamicArray * da){
     printf("Input destination: ");
@@ -217,6 +253,9 @@ void choose_option_ui(DynamicArray* da){
         }
         else if (strcmp(choose, "8") == 0){
             display_destination_month_ui(da);
+        }
+        else if (strcmp(choose, "9") == 0){
+            display_type_string_ui(da);
         }
 
         else printf("Wrong command! Please try again!");

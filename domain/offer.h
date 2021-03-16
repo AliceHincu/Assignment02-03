@@ -29,6 +29,6 @@ Date get_detailed_date(char* departure_date);
 void change_type(Offer *offer, char* new_type);
 void change_destination(Offer *offer, char* new_dest);
 void change_date(Offer *offer, char* new_date);
-void change_price(Offer *offer, int new_price);
+void change_price(Offer *offer, double new_price);
 
 void destroy_offer(Offer*);
