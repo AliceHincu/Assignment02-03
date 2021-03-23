@@ -13,17 +13,20 @@ CMakeFiles/a23_913AliceHincu.dir/main.c.o: ../dynamic_array/dynamic_array.h
 CMakeFiles/a23_913AliceHincu.dir/main.c.o: ../main.c
 CMakeFiles/a23_913AliceHincu.dir/main.c.o: ../tests/tests.h
 CMakeFiles/a23_913AliceHincu.dir/main.c.o: ../ui/ui.h
+CMakeFiles/a23_913AliceHincu.dir/main.c.o: ../undo/Undo-MementoApproach.h
 
 CMakeFiles/a23_913AliceHincu.dir/repo/repo_offer.c.o: ../domain/offer.h
 CMakeFiles/a23_913AliceHincu.dir/repo/repo_offer.c.o: ../dynamic_array/dynamic_array.h
 CMakeFiles/a23_913AliceHincu.dir/repo/repo_offer.c.o: ../repo/repo_offer.c
 CMakeFiles/a23_913AliceHincu.dir/repo/repo_offer.c.o: ../repo/repo_offer.h
+CMakeFiles/a23_913AliceHincu.dir/repo/repo_offer.c.o: ../undo/Undo-MementoApproach.h
 
 CMakeFiles/a23_913AliceHincu.dir/service/offer_service.c.o: ../domain/offer.h
 CMakeFiles/a23_913AliceHincu.dir/service/offer_service.c.o: ../dynamic_array/dynamic_array.h
 CMakeFiles/a23_913AliceHincu.dir/service/offer_service.c.o: ../repo/repo_offer.h
 CMakeFiles/a23_913AliceHincu.dir/service/offer_service.c.o: ../service/offer_service.c
 CMakeFiles/a23_913AliceHincu.dir/service/offer_service.c.o: ../service/offer_service.h
+CMakeFiles/a23_913AliceHincu.dir/service/offer_service.c.o: ../undo/Undo-MementoApproach.h
 CMakeFiles/a23_913AliceHincu.dir/service/offer_service.c.o: ../validation/offer_validator.h
 
 CMakeFiles/a23_913AliceHincu.dir/tests/tests.c.o: ../domain/offer.h
@@ -37,6 +40,12 @@ CMakeFiles/a23_913AliceHincu.dir/ui/ui.c.o: ../dynamic_array/dynamic_array.h
 CMakeFiles/a23_913AliceHincu.dir/ui/ui.c.o: ../service/offer_service.h
 CMakeFiles/a23_913AliceHincu.dir/ui/ui.c.o: ../ui/ui.c
 CMakeFiles/a23_913AliceHincu.dir/ui/ui.c.o: ../ui/ui.h
+CMakeFiles/a23_913AliceHincu.dir/ui/ui.c.o: ../undo/Undo-MementoApproach.h
+
+CMakeFiles/a23_913AliceHincu.dir/undo/Undo-MementoApproach.c.o: ../domain/offer.h
+CMakeFiles/a23_913AliceHincu.dir/undo/Undo-MementoApproach.c.o: ../dynamic_array/dynamic_array.h
+CMakeFiles/a23_913AliceHincu.dir/undo/Undo-MementoApproach.c.o: ../undo/Undo-MementoApproach.c
+CMakeFiles/a23_913AliceHincu.dir/undo/Undo-MementoApproach.c.o: ../undo/Undo-MementoApproach.h
 
 CMakeFiles/a23_913AliceHincu.dir/validation/offer_validator.c.o: ../domain/offer.h
 CMakeFiles/a23_913AliceHincu.dir/validation/offer_validator.c.o: ../dynamic_array/dynamic_array.h

@@ -14,13 +14,13 @@ Offer* create_offer(char* type, char* destination, char* departure_date, double 
 
     //make a copy in case type it's local and add +1 for \0. If you don't do that => error.
     //you need to make it.
-    offer->type = malloc(sizeof(char)*(strlen(type)+1));
+    offer->type = (char*)malloc(sizeof(char)*(strlen(type)+1));
     strcpy(offer->type, type);
 
-    offer->destination = malloc(sizeof(char)*(strlen(destination)+1));
+    offer->destination = (char*)malloc(sizeof(char)*(strlen(destination)+1));
     strcpy(offer->destination, destination);
 
-    offer->departure_date = malloc(sizeof(char)*(strlen(departure_date)+1));
+    offer->departure_date = (char*)malloc(sizeof(char)*(strlen(departure_date)+1));
     strcpy(offer->departure_date, departure_date);
 
 
@@ -31,7 +31,7 @@ Offer* create_offer(char* type, char* destination, char* departure_date, double 
 
 
 Offer* copy_offer(Offer* offer){
-    create_offer(offer->type, offer->destination, offer->departure_date, offer->price);
+    return create_offer(get_type_offer(offer), get_destination_offer(offer), get_departure_date_offer(offer), get_price_offer(offer));
 }
 
 
@@ -56,13 +56,15 @@ char* get_departure_date_offer(Offer* offer){
 }
 
 
-Date get_detailed_date(char* departure_date){
+Date get_detailed_date(char* date){
     // pointer to current split section
     char *pch;
     Date final_date;
     // info needed
     int day = -1, month = -1, year = -1;
     // split the date from beginning to the first occurrence of -
+    char* departure_date = (char*)malloc(sizeof(char)*(strlen(date)+1)); // make a copy first, else the string from ui modifies(pointer!!!)
+    strcpy(departure_date, date);
     pch = strtok(departure_date,"-");
 
     // while we have more / chars
@@ -80,6 +82,7 @@ Date get_detailed_date(char* departure_date){
     final_date.day = day;
     final_date.month = month;
     final_date.year = year;
+    free(departure_date);
     return final_date;
 }
 
@@ -90,10 +93,30 @@ double get_price_offer(Offer* offer){
     return offer -> price;
 }
 
+int get_day_offer(Offer* offer){
+    if(offer == NULL)
+        return 0;
+    return offer->detailed_date.day;
+}
+
+int get_month_offer(Offer* offer){
+    if(offer == NULL)
+        return 0;
+    return offer->detailed_date.month;
+}
+
+int get_year_offer(Offer* offer){
+    if(offer == NULL)
+        return 0;
+    return offer->detailed_date.year;
+}
+
 
 void change_type(Offer *offer, char* new_type){
+    if (offer == NULL || strlen(new_type) == 0)
+        return;
     free(offer->type);
-    offer->type = (char*)malloc(strlen(new_type)+1);
+    offer->type = (char*)malloc(sizeof(char)*strlen(new_type)+1);
     strcpy(offer->type, new_type);
     offer->type[strlen(new_type)] = '\0'; // nul terminate the array, so it can be a string
 
@@ -101,8 +124,10 @@ void change_type(Offer *offer, char* new_type){
 
 
 void change_destination(Offer *offer, char* new_dest){
+    if (offer == NULL || strlen(new_dest) == 0)
+        return;
     free(offer->destination);
-    offer->destination = (char*)malloc(strlen(new_dest)+1);
+    offer->destination = (char*)malloc(sizeof(char)*strlen(new_dest)+1);
     strcpy(offer->destination, new_dest);
     offer->destination[strlen(new_dest)] = '\0'; // nul terminate the array, so it can be a string
 
@@ -110,10 +135,13 @@ void change_destination(Offer *offer, char* new_dest){
 
 
 void change_date(Offer *offer, char* new_date){
+    if (offer == NULL || strlen(new_date) == 0)
+        return;
     free(offer->departure_date);
-    offer->departure_date = (char*)malloc(strlen(new_date)+1);
+    offer->departure_date = (char*)malloc(sizeof(char)*strlen(new_date)+1);
     strcpy(offer->departure_date, new_date);
     offer->departure_date[strlen(new_date)] = '\0'; // nul terminate the array, so it can be a string
+
 
     offer->detailed_date = get_detailed_date(new_date);
 }
@@ -129,4 +157,5 @@ void destroy_offer(Offer* offer){
     free(offer->type);
     free(offer->destination);
     free(offer);
+    offer = NULL;
 }

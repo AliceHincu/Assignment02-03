@@ -24,6 +24,9 @@ char* get_type_offer(Offer*);
 char* get_destination_offer(Offer*);
 char* get_departure_date_offer(Offer*);
 double get_price_offer(Offer*);
+int get_month_offer(Offer* offer);
+int get_day_offer(Offer* offer);
+int get_year_offer(Offer* offer);
 Date get_detailed_date(char* departure_date);
 
 void change_type(Offer *offer, char* new_type);

@@ -65,7 +65,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage
 
 # Include any dependencies generated for this target.
 include CMakeFiles/a23_913AliceHincu.dir/depend.make
@@ -78,7 +78,7 @@ include CMakeFiles/a23_913AliceHincu.dir/flags.make
 
 CMakeFiles/a23_913AliceHincu.dir/main.c.o: CMakeFiles/a23_913AliceHincu.dir/flags.make
 CMakeFiles/a23_913AliceHincu.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/a23_913AliceHincu.dir/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/a23_913AliceHincu.dir/main.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/a23_913AliceHincu.dir/main.c.o -c /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/main.c
 
 CMakeFiles/a23_913AliceHincu.dir/main.c.i: cmake_force
@@ -91,7 +91,7 @@ CMakeFiles/a23_913AliceHincu.dir/main.c.s: cmake_force
 
 CMakeFiles/a23_913AliceHincu.dir/ui/ui.c.o: CMakeFiles/a23_913AliceHincu.dir/flags.make
 CMakeFiles/a23_913AliceHincu.dir/ui/ui.c.o: ../ui/ui.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/a23_913AliceHincu.dir/ui/ui.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/a23_913AliceHincu.dir/ui/ui.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/a23_913AliceHincu.dir/ui/ui.c.o -c /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/ui/ui.c
 
 CMakeFiles/a23_913AliceHincu.dir/ui/ui.c.i: cmake_force
@@ -104,7 +104,7 @@ CMakeFiles/a23_913AliceHincu.dir/ui/ui.c.s: cmake_force
 
 CMakeFiles/a23_913AliceHincu.dir/domain/offer.c.o: CMakeFiles/a23_913AliceHincu.dir/flags.make
 CMakeFiles/a23_913AliceHincu.dir/domain/offer.c.o: ../domain/offer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/a23_913AliceHincu.dir/domain/offer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/a23_913AliceHincu.dir/domain/offer.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/a23_913AliceHincu.dir/domain/offer.c.o -c /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/domain/offer.c
 
 CMakeFiles/a23_913AliceHincu.dir/domain/offer.c.i: cmake_force
@@ -117,7 +117,7 @@ CMakeFiles/a23_913AliceHincu.dir/domain/offer.c.s: cmake_force
 
 CMakeFiles/a23_913AliceHincu.dir/repo/repo_offer.c.o: CMakeFiles/a23_913AliceHincu.dir/flags.make
 CMakeFiles/a23_913AliceHincu.dir/repo/repo_offer.c.o: ../repo/repo_offer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/a23_913AliceHincu.dir/repo/repo_offer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/a23_913AliceHincu.dir/repo/repo_offer.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/a23_913AliceHincu.dir/repo/repo_offer.c.o -c /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/repo/repo_offer.c
 
 CMakeFiles/a23_913AliceHincu.dir/repo/repo_offer.c.i: cmake_force
@@ -130,7 +130,7 @@ CMakeFiles/a23_913AliceHincu.dir/repo/repo_offer.c.s: cmake_force
 
 CMakeFiles/a23_913AliceHincu.dir/tests/tests.c.o: CMakeFiles/a23_913AliceHincu.dir/flags.make
 CMakeFiles/a23_913AliceHincu.dir/tests/tests.c.o: ../tests/tests.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/a23_913AliceHincu.dir/tests/tests.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/a23_913AliceHincu.dir/tests/tests.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/a23_913AliceHincu.dir/tests/tests.c.o -c /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/tests/tests.c
 
 CMakeFiles/a23_913AliceHincu.dir/tests/tests.c.i: cmake_force
@@ -143,7 +143,7 @@ CMakeFiles/a23_913AliceHincu.dir/tests/tests.c.s: cmake_force
 
 CMakeFiles/a23_913AliceHincu.dir/validation/offer_validator.c.o: CMakeFiles/a23_913AliceHincu.dir/flags.make
 CMakeFiles/a23_913AliceHincu.dir/validation/offer_validator.c.o: ../validation/offer_validator.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/a23_913AliceHincu.dir/validation/offer_validator.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/a23_913AliceHincu.dir/validation/offer_validator.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/a23_913AliceHincu.dir/validation/offer_validator.c.o -c /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/validation/offer_validator.c
 
 CMakeFiles/a23_913AliceHincu.dir/validation/offer_validator.c.i: cmake_force
@@ -156,7 +156,7 @@ CMakeFiles/a23_913AliceHincu.dir/validation/offer_validator.c.s: cmake_force
 
 CMakeFiles/a23_913AliceHincu.dir/service/offer_service.c.o: CMakeFiles/a23_913AliceHincu.dir/flags.make
 CMakeFiles/a23_913AliceHincu.dir/service/offer_service.c.o: ../service/offer_service.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/a23_913AliceHincu.dir/service/offer_service.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/a23_913AliceHincu.dir/service/offer_service.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/a23_913AliceHincu.dir/service/offer_service.c.o -c /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/service/offer_service.c
 
 CMakeFiles/a23_913AliceHincu.dir/service/offer_service.c.i: cmake_force
@@ -169,7 +169,7 @@ CMakeFiles/a23_913AliceHincu.dir/service/offer_service.c.s: cmake_force
 
 CMakeFiles/a23_913AliceHincu.dir/dynamic_array/dynamic_array.c.o: CMakeFiles/a23_913AliceHincu.dir/flags.make
 CMakeFiles/a23_913AliceHincu.dir/dynamic_array/dynamic_array.c.o: ../dynamic_array/dynamic_array.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/a23_913AliceHincu.dir/dynamic_array/dynamic_array.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/a23_913AliceHincu.dir/dynamic_array/dynamic_array.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/a23_913AliceHincu.dir/dynamic_array/dynamic_array.c.o -c /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.c
 
 CMakeFiles/a23_913AliceHincu.dir/dynamic_array/dynamic_array.c.i: cmake_force
@@ -182,7 +182,7 @@ CMakeFiles/a23_913AliceHincu.dir/dynamic_array/dynamic_array.c.s: cmake_force
 
 CMakeFiles/a23_913AliceHincu.dir/undo/Undo-MementoApproach.c.o: CMakeFiles/a23_913AliceHincu.dir/flags.make
 CMakeFiles/a23_913AliceHincu.dir/undo/Undo-MementoApproach.c.o: ../undo/Undo-MementoApproach.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/a23_913AliceHincu.dir/undo/Undo-MementoApproach.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/a23_913AliceHincu.dir/undo/Undo-MementoApproach.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/a23_913AliceHincu.dir/undo/Undo-MementoApproach.c.o -c /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/undo/Undo-MementoApproach.c
 
 CMakeFiles/a23_913AliceHincu.dir/undo/Undo-MementoApproach.c.i: cmake_force
@@ -219,7 +219,7 @@ a23_913AliceHincu: CMakeFiles/a23_913AliceHincu.dir/dynamic_array/dynamic_array.
 a23_913AliceHincu: CMakeFiles/a23_913AliceHincu.dir/undo/Undo-MementoApproach.c.o
 a23_913AliceHincu: CMakeFiles/a23_913AliceHincu.dir/build.make
 a23_913AliceHincu: CMakeFiles/a23_913AliceHincu.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable a23_913AliceHincu"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable a23_913AliceHincu"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/a23_913AliceHincu.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -232,6 +232,6 @@ CMakeFiles/a23_913AliceHincu.dir/clean:
 .PHONY : CMakeFiles/a23_913AliceHincu.dir/clean
 
 CMakeFiles/a23_913AliceHincu.dir/depend:
-	cd /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug/CMakeFiles/a23_913AliceHincu.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/CMakeFiles/a23_913AliceHincu.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/a23_913AliceHincu.dir/depend
 

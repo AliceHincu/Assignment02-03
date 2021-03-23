@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="a23_913AliceHincu"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="a23_913AliceHincu">
+				<Option output="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/a23_913AliceHincu" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 a23_913AliceHincu"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="a23_913AliceHincu/fast">
+				<Option output="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/a23_913AliceHincu" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 a23_913AliceHincu/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/domain/offer.c">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/domain/offer.h">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.c">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/dynamic_array/dynamic_array.h">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/main.c">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/repo/repo_offer.c">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/repo/repo_offer.h">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/service/offer_service.c">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/service/offer_service.h">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/tests/tests.c">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/tests/tests.h">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/ui/ui.c">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/ui/ui.h">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/undo/Undo-MementoApproach.c">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/undo/Undo-MementoApproach.h">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/validation/offer_validator.c">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/validation/offer_validator.h">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

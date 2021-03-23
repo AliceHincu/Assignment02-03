@@ -25,3 +25,10 @@ TElement* get_offers(DynamicArray *da){
     return get_all(da);
 
 }
+
+void setNewArray(DynamicArray *da, DynamicArray* undoArray){
+    DynamicArray *undo;
+    undo = undoArray;
+    da = copyDynamicArray(undoArray);
+
+}

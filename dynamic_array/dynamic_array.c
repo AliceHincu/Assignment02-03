@@ -7,7 +7,7 @@
 #include <assert.h>
 
 
-DynamicArray* createDynamicArray(int capacity)
+DynamicArray* createDynamicArray(int capacity, DestroyElementFunctionType destroyElementFunction, CopyElementFunctionType copyElementFunction)
 {
     DynamicArray* da = (DynamicArray*)malloc(sizeof(DynamicArray));
     // make sure that the space was allocated
@@ -16,12 +16,12 @@ DynamicArray* createDynamicArray(int capacity)
 
     da->capacity = capacity;
     da->length = 0;
-
-    // allocate space for the elements
     da->elements = (TElement*)malloc(capacity * sizeof(TElement));
     if (da->elements == NULL)
         return NULL;
 
+    da->destroyElementFunction = destroyElementFunction;
+    da->copyElementFunction = copyElementFunction;
     return da;
 }
 
@@ -34,8 +34,7 @@ void destroyDynamicArray(DynamicArray* arr)
     // free the space allocated for the elements
     for(int index = 0; index < arr->length; index++) {
         if (arr->elements[index] != NULL) {
-            destroy_offer(arr->elements[index]);
-            //free(arr->elements[index]);
+            arr->destroyElementFunction(arr->elements[index]);
         }
     }
     free(arr->elements);
@@ -45,6 +44,45 @@ void destroyDynamicArray(DynamicArray* arr)
     free(arr);
 }
 
+
+DynamicArray* copyDynamicArray(DynamicArray*arr)
+{
+    DynamicArray *new_array = (DynamicArray*)malloc(sizeof(DynamicArray));
+    new_array->capacity = arr->capacity;
+    new_array->length = arr->length;
+
+    new_array->elements = (TElement*)malloc((arr->capacity*sizeof(TElement)));
+    new_array->copyElementFunction = arr->copyElementFunction;
+    new_array->destroyElementFunction = arr->destroyElementFunction;
+    for(int index=0; index<arr->length;index++){
+        new_array->elements[index] = arr->copyElementFunction(arr->elements[index]);
+    }
+    return new_array;
+
+}
+
+void copyFromToDynamicArrayUndo(DynamicArray*da, DynamicArray*undo){
+   for(int index = 0; index < da->length; index++) {
+        if (da->elements[index] != NULL) {
+            da->destroyElementFunction(da->elements[index]);
+        }
+    }
+    free(da->elements);
+    da->elements = NULL;
+
+    da->copyElementFunction = undo->copyElementFunction;
+    da->destroyElementFunction = undo->destroyElementFunction;
+    da->capacity = undo->length;
+    da->length = 0;
+    da->elements = (TElement*)malloc( (undo->length)*sizeof(TElement));
+
+    for(int index=0; index<undo->length;index++){
+        Offer* of = create_offer(get_type_offer(undo->elements[index]), get_destination_offer(undo->elements[index]),
+                                 get_departure_date_offer(undo->elements[index]), get_price_offer(undo->elements[index]));
+        addElementToDynamicArray(da, of);
+    }
+
+}
 
 void resizeDynamicArray(DynamicArray* arr, int new_capacity)
 {
@@ -63,11 +101,6 @@ void resizeDynamicArray(DynamicArray* arr, int new_capacity)
 
 void addElementToDynamicArray(DynamicArray* arr, TElement t)
 {
-    if (arr == NULL)
-        return;
-    if (arr->elements == NULL)
-        return;
-
     // resize the array, if necessary
     if (arr->length == arr->capacity)
         resizeDynamicArray(arr, 2*(arr->capacity));
@@ -82,13 +115,19 @@ void deleteElementFromPosition(DynamicArray *arr, int position){
     if (arr->length == arr->capacity/4)
         resizeDynamicArray(arr, arr->capacity/2);
 
-    destroy_offer(arr->elements[position]);
+    arr->destroyElementFunction(arr->elements[position]);
     for(int i = position; i< arr->length-1;++i)
         arr -> elements[i] = arr -> elements[i+1];
 
     arr -> length--;
 }
 
+TElement getElementOnPosition(DynamicArray *arr, int position) {
+    if (position >= arr->length) {
+        return NULL;
+    }
+    return arr->elements[position];
+}
 
 TElement *get_all(DynamicArray* arr){
     if (arr == NULL)
@@ -106,7 +145,7 @@ int get_length(DynamicArray * arr){
 
 void testsDynamicArray()
 {
-    DynamicArray* da = createDynamicArray(2);
+    DynamicArray* da = createDynamicArray(2, &destroy_offer, &copy_offer);
     if (da == NULL)
         assert(0);
 

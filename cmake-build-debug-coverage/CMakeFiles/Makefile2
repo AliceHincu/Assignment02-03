@@ -66,7 +66,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -93,14 +93,14 @@ clean: CMakeFiles/a23_913AliceHincu.dir/clean
 CMakeFiles/a23_913AliceHincu.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/a23_913AliceHincu.dir/build.make CMakeFiles/a23_913AliceHincu.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/a23_913AliceHincu.dir/build.make CMakeFiles/a23_913AliceHincu.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target a23_913AliceHincu"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target a23_913AliceHincu"
 .PHONY : CMakeFiles/a23_913AliceHincu.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/a23_913AliceHincu.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/a23_913AliceHincu.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/cmake-build-debug-coverage/CMakeFiles 0
 .PHONY : CMakeFiles/a23_913AliceHincu.dir/rule
 
 # Convenience name for target.

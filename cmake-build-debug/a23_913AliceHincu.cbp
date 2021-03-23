@@ -115,6 +115,12 @@
 		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/ui/ui.h">
 			<Option target="a23_913AliceHincu"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/undo/Undo-MementoApproach.c">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/undo/Undo-MementoApproach.h">
+			<Option target="a23_913AliceHincu"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/Sakura/Documents/GitHub/FP/a23-913AliceHincu/validation/offer_validator.c">
 			<Option target="a23_913AliceHincu"/>
 		</Unit>
